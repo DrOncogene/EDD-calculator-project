@@ -1,7 +1,7 @@
 
 let preg;
 
-loadEventListeners();
+// loadEventListeners();
 
 function loadEventListeners(){
   const LMP = prompt('Last Menstrual Period');

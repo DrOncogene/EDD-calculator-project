@@ -4,11 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestational Age Calculator</title>
-  <link rel="stylesheet" href="css/bootstrap-4.5.0-dist/css/bootstrap-reboot.min.css">
+  <link rel="icon" href="img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+  <style>
+    body{
+      font-family: 'Segoe Print','Cascadia Mono', Helvetica, sans-serif;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <div class="card bg-dark text-info border-info text-center p-3 mt-3 ">
+      <h3 class="card-title text-uppercase mb-5">Gestational Age Calculator by Nas</h3>
+      <div class="card-body">
+        <div class="row">
+          <div class="form col-md-8">
+            <div class="row mb-5">
+              <label for="lmp" class="col-md-8 col-sm text-md-right">Last Menstrual Period</label>
+              <input type="date" class="col-md-4 form-input border-info text-info" id='lmp'>
+            </div>
+            
+            <div class="row mb-5">
+              <label for="today" class="col-md-8 col-sm text-md-right">Today's date</label>
+              <input type="date" class="col-md-4 form-input border-info text-info" id='today'>
+            </div>
+          </div>
 
-  
+          <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-6  mx-auto">
+            <a href="#" class="btn btn-primary px-5" id="calculateBtn">Calculate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="css/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
   <script src="cyesis.js"></script>
   <script src="app.js"></script>
