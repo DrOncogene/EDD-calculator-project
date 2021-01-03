@@ -1,27 +1,38 @@
 
+const ui = new UI();
+
 let preg;
 
-// loadEventListeners();
+loadEventListeners();
 
 function loadEventListeners(){
-  const LMP = prompt('Last Menstrual Period');
-  const today = prompt('Today\'s date');
-
-  if ((LMP === '') || (today === '')){
-    alert ('Nothing entered');
-    init();
-  } else {
-    preg = new Cyesis(LMP, today);
-  }
+  ui.calcBtn.addEventListener('click', calculate);
 }
 
-console.log (preg);
+function calculate(e){
+  if (e.target == ui.calcBtn){
+    const lmp = ui.UIlmp.value;
+    const today = ui.UItoday.value;
 
-const edd = preg.calculateEDD();
-const ega = preg.calculateEGA();
+    if ((lmp === '') || (today === '')){
+      ui.showAlert('Please fill all fields', 'danger');
+    } else {
+      console.log(lmp);
+      console.log(today);
 
-console.log(edd);
-console.log(ega);
+      preg = new Cyesis(lmp, today);
 
-alert(`Expected Delivery Date is ${edd}\n
-Estimated Gestational Age is ${ega}`);
+      const edd = preg.calculateEDD();
+      const ega = preg.calculateEGA();
+
+      console.log(edd);
+      console.log(ega);
+
+      ui.showResults(edd, ega);
+    }
+    console.log (preg);
+  }
+
+  e.preventDefault();
+}
+

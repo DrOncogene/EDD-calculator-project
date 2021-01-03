@@ -9,6 +9,11 @@
   <style>
     body{
       font-family: 'Segoe Print','Cascadia Mono', Helvetica, sans-serif;
+      background: #333;
+    }
+
+    .spinner-border, #results{
+      display: none;
     }
   </style>
 </head>
@@ -34,7 +39,23 @@
         </div>
         <div class="row">
           <div class="col-md-6  mx-auto">
-            <a href="#" class="btn btn-primary px-5" id="calculateBtn">Calculate</a>
+            <button href="#" class="btn btn-primary px-5" id="calculateBtn"> 
+              <span class="spinner-border spinner-border-sm mb-2"></span>
+              Calculate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div id="loader">
+        <img src="img/FXW8.gif" width="200px" height="150px" alt="">
+      </div> -->
+
+      <div class="" id="results">
+        <div class="card bg-dark text-info border-info text-center p-3 mt-3">
+          <div class="card-body row">
+            <p class=" col-sm-6 text-info text-uppercase">Expected Delivery Date: <br> <span class="font-weight-bolder mt-2" id="edd"> </span> </p>
+            <p class=" col-sm-6 text-info text-uppercase">Estimated Gestational Age: <br> <span class="font-weight-bolder mt-2" id="ega"> </span> </p> 
           </div>
         </div>
       </div>
@@ -42,6 +63,7 @@
   </div>
 
   <script src="css/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+  <script src="UI.js"></script>
   <script src="cyesis.js"></script>
   <script src="app.js"></script>
 </body>
