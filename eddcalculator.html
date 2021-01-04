@@ -8,19 +8,23 @@
   <link rel="stylesheet" href="css/bootstrap-4.5.0-dist/css/bootstrap.min.css">
   <style>
     body{
-      font-family: 'Segoe Print','Cascadia Mono', Helvetica, sans-serif;
+      font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
       background: #333;
     }
 
     .spinner-border, #results{
       display: none;
     }
+
+    body > .container{
+      margin-bottom: 10rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="card bg-dark text-info border-info text-center p-3 mt-3 ">
-      <h3 class="card-title text-uppercase mb-5">Gestational Age Calculator by Nas</h3>
+      <h3 class="card-title text-uppercase mb-5">Gestational Age Calculator</h3>
       <div class="card-body">
         <div class="row">
           <div class="form col-md-8">
@@ -38,10 +42,13 @@
           <div class="col-md-4"></div>
         </div>
         <div class="row">
-          <div class="col-md-6  mx-auto">
-            <button href="#" class="btn btn-primary px-5" id="calculateBtn"> 
-              <span class="spinner-border spinner-border-sm mb-2"></span>
+          <div class="col-md-6  mx-auto" id="button-area">
+            <button href="#" class="btn btn-primary px-4" id="calculate-btn"> 
+              <span class="spinner-border spinner-border-sm mb-1 mr-2"></span>
               Calculate
+            </button>
+            <button href="#" class="btn btn-primary px-5" id="clear-btn"> 
+              Clear
             </button>
           </div>
         </div>
@@ -61,6 +68,13 @@
       </div>
     </div>
   </div>
+
+  <footer class="mt-5 p-5 bg-light fixed-bottom">
+    <div class="container text-center">
+      <small>Copyright &copy; 2020 Oncogene Studios</small> 
+    </div>
+    
+  </footer>
 
   <script src="css/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
   <script src="UI.js"></script>

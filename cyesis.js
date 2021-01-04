@@ -2,6 +2,8 @@ class Cyesis {
   constructor(LMP, today) {
     this.lmp = new Date(LMP);
     this.today = new Date(today);
+    this.edd;
+    this.ega;
   }
 
   calculateEDD(){
@@ -10,7 +12,7 @@ class Cyesis {
     let eddDay = this.lmp.getDate() + 7;
     let eddMonth;
     let eddYear = this.lmp.getFullYear();
-    let edd;
+    // let edd;
     
     if (lmpMonth <= 2){
       eddMonth = lmpMonth + 1 + 9;
@@ -33,26 +35,25 @@ class Cyesis {
         eddYear += 1;
       }
         
-      // edd = new Date(`${eddMonth} / ${eddDay} / ${eddYear}`);
     } else {
       eddMonth = lmpMonth + 1 - 3;
       eddYear += 1;
 
-      if ((eddDay > 30) && (lmpMonth == 3 || 5 || 8 || 10)){
+      if ((eddDay > 30) && (this.is30Days(lmpMonth))){
         eddDay -= 30;
         eddMonth += 1;
-      } else if ((eddDay > 31) && (lmpMonth != 3 || 5 || 8 || 10)){
+      } else if ((eddDay > 31) && !(this.is30Days(lmpMonth))){
         eddDay -= 31;
         eddMonth += 1;
       }
       
     }
       
-    edd = new Date(`${eddMonth} / ${eddDay} / ${eddYear}`);
+    this.edd = new Date(`${eddMonth} / ${eddDay} / ${eddYear}`);
     
-    console.log(edd);
+    console.log(this.edd);
 
-    return `${this.getMonthName(edd.getMonth())} ${this.appendPosition(edd.getDate())}, ${edd.getFullYear()} `;
+    return `${this.getMonthName(this.edd.getMonth())} ${this.appendPosition(this.edd.getDate())}, ${this.edd.getFullYear()} `;
   }
 
 
@@ -65,7 +66,13 @@ class Cyesis {
     console.log(egaDay);
     console.log(egaWeek);
 
-    return (`${egaWeek} weeks, ${egaDay} days`)
+    if (egaWeek > 4){
+      this.ega = egaWeek;
+      return (`${egaWeek} weeks, ${egaDay} days`);
+    } else {
+      
+    }
+    
   }
 
   getMonthName(monthNum){
@@ -86,6 +93,14 @@ class Cyesis {
     const noOfDays = (yearEnd.getTime() - yearStart.getTime()) / (1000*3600*24);
 
     if (noOfDays == 366){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  is30Days(month){
+    if((month == 3) || (month == 5) || (month == 8) || (month == 10)){
       return true;
     } else {
       return false;
@@ -118,4 +133,5 @@ class Cyesis {
 
     return number;
   }
+
 }

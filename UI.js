@@ -7,22 +7,19 @@ class UI{
   // form = document.querySelector('.form');
   UIlmp = document.querySelector('#lmp');
   UItoday = document.querySelector('#today');
-  calcBtn = document.querySelector('#calculateBtn');
+  calcBtn = document.querySelector('#calculate-btn');
+  clearBtn = document.querySelector('#clear-btn');
   
   showResults(edd, ega){
     this.showLoader();
-    const result = document.getElementById('results');
-    const UIedd = document.getElementById('edd');
-    const UIega = document.getElementById('ega');
 
-    setTimeout(this.displayResult, 1000);
-
-    UIedd.innerHTML = `${edd}`;
-    UIega.innerHTML = `${ega}`;
+    document.getElementById('edd').innerHTML = `${edd}`;
+    document.getElementById('ega').innerHTML = `${ega}`;
 
     document.getElementById('edd').style.fontSize = '32px';
     document.getElementById('ega').style.fontSize = '32px';
 
+    setTimeout(this.displayResult, 1000);
   }
 
   displayResult(){
@@ -38,7 +35,7 @@ class UI{
 
     this.card.insertBefore(alert, cardTitle);
 
-    setTimeout(this.clearAlert, 2000);
+    setTimeout(this.clearAlert, 3000);
 
   }
 
