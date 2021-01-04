@@ -19,37 +19,55 @@
     body > .container{
       margin-bottom: 10rem;
     }
+
+    @media only screen and (max-width: 768px),
+                            (max-device-width: 768px) {
+      .display-sm-none{
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="card bg-dark text-info border-info text-center p-3 mt-3 ">
+    <div class="card bg-dark text-info border-info text-center p-3 mt-3 row">
       <h3 class="card-title text-uppercase mb-5">Gestational Age Calculator</h3>
       <div class="card-body">
         <div class="row">
           <div class="form col-md-8">
             <div class="row mb-5">
-              <label for="lmp" class="col-md-8 col-sm text-md-right">Last Menstrual Period</label>
+              <label for="lmp" class="col-md-6 col-sm text-md-right">Last Menstrual Period</label>
               <input type="date" class="col-md-4 form-input border-info text-info" id='lmp'>
             </div>
             
             <div class="row mb-5">
-              <label for="today" class="col-md-8 col-sm text-md-right">Today's date</label>
+              <label for="today" class="col-md-6 col-sm text-md-right">Today's date</label>
               <input type="date" class="col-md-4 form-input border-info text-info" id='today'>
+            </div>
+            <div class="w-50 d-flex justify-content-center align-items-center mx-auto mb-5" id="button-area">
+              <button href="#" class="btn btn-primary px-4 mr-3 text-nowrap" id="calculate-btn"> 
+                <span class="spinner-border spinner-border-sm mb-1 mr-2 "></span>
+                Calculate
+              </button>
+              <button href="#" class="btn btn-primary px-4" id="clear-btn"> 
+                Clear
+              </button>
             </div>
           </div>
 
-          <div class="col-md-4"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-6  mx-auto" id="button-area">
-            <button href="#" class="btn btn-primary px-4" id="calculate-btn"> 
-              <span class="spinner-border spinner-border-sm mb-1 mr-2"></span>
-              Calculate
-            </button>
-            <button href="#" class="btn btn-primary px-5" id="clear-btn"> 
-              Clear
-            </button>
+          <div class="col-md-4 border border-info rounded display-sm-none">
+            <div class="border-info mx-auto text-info hide-sm py-1">
+              <h4 class="text-uppercase text-left ml-4">How to use</h4>
+              <div class="">
+                <ul class="text-left">
+                  <li class="list-item"><small>Enter the date of the first day of Last Menstrual Period</small></li>
+                  <li class="list-item"><small>Today's date is already entered by default</small></li>
+                  <li class="list-item"><small>You can enter another date as today's date to know the EGA at that date</small></li>
+                  <li class="list-item"><small>Press the calculate button to know the EDD and the EGA</small> </li>
+                  <li class="list-item"><small>Use the clear button to clear all fields and enter another value</small></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -69,13 +87,9 @@
         </div>
       </div>
     </div>
-
-    <!-- <div class="row">
-      <a href="help.html" class="btn btn-info col-sm-2 align-right">Instructions</a>
-    </div> -->
   </div>
 
-  <footer class="mt-5 p-5 bg-light fixed-bottom">
+  <footer class="mt-5 p-5 bg-light">
     <div class="container text-center">
       <small>Copyright &copy; 2020 Abdulrasheed Nasir</small> 
     </div>

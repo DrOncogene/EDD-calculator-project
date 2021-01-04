@@ -44,18 +44,22 @@ function calculate(e){
       }
       
     }
-
     
   } else if (e.target == ui.clearBtn){
     // If clear button was clicked
-    const results = document.getElementById('results');
-    // Hide the results
-    results.style.display = 'none';
-    // Clear the lmp input field
-    lmp.value = '';
-    // Set the today's date input field to today's date
-    today.value = placeholder(new Date());
-    ui.showAlert('Cleared', 'success');
+    if (lmp.value == ''){
+      ui.showAlert('Nothing to clear', 'info');
+    } else{
+      const results = document.getElementById('results');
+      // Hide the results
+      results.style.display = 'none';
+      // Clear the lmp input field
+      lmp.value = '';
+      // Set the today's date input field to today's date
+      today.value = placeholder(new Date());
+      ui.showAlert('Cleared', 'success');
+    }
+   
   }
 
   e.preventDefault();
