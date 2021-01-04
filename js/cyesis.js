@@ -115,7 +115,7 @@ class Cyesis {
   }
 
   is30Days(month){
-    // Method to check if a month is 30 days i.e. Apr, Jun, Sep, Nov. The month numbers are zero based. Used above
+    // Method to check if a month has 30 days i.e. Apr, Jun, Sep, Nov. The month numbers are zero based. Used above
     if((month == 3) || (month == 5) || (month == 8) || (month == 10)){
       return true;
     } else {
@@ -124,7 +124,6 @@ class Cyesis {
   }
 
   appendPosition(number){
-
     // Method to append position to a given number. Used above for the day
     if ((number % 10) == 1){
       if (number == 11){
