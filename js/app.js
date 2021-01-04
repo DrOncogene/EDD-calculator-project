@@ -44,7 +44,7 @@ function calculate(e){
       }
       
     }
-    
+
   } else if (e.target == ui.clearBtn){
     // If clear button was clicked
     if (lmp.value == ''){

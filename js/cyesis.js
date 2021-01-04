@@ -1,4 +1,4 @@
-// create a class to represent a pregnancy, each having an lmp, today's date, edd and ega
+// A class to represent a pregnancy, each having an lmp, today's date, edd and ega
 class Cyesis {
   constructor(LMP, today) {
     this.lmp = new Date(LMP);
