@@ -83,7 +83,7 @@ class Cyesis {
     // If ega is at least 1, return a string containing egaWeek and egaDays
     if (egaWeek >= 1){
       this.ega = egaWeek;// Set the ega of the current cyesis to the no of weeks only to be used in app.js for a conditional
-      return (`${egaWeek} weeks, ${egaDays} days`);
+      return (`${egaWeek} week(s), ${egaDays} day(s)`);
     }
     
   }
