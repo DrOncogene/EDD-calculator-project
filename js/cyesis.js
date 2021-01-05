@@ -149,5 +149,4 @@ class Cyesis {
 
     return number;
   }
-
 }
