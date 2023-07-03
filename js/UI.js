@@ -1,6 +1,6 @@
 // A UI class for DOM manipulation and showing outputs
-class UI{
-  constructor(){
+class UI {
+  constructor() {
 
   }
 
@@ -9,14 +9,14 @@ class UI{
   UItoday = document.querySelector('#today');
   calcBtn = document.querySelector('#calculate-btn');
   clearBtn = document.querySelector('#clear-btn');
-  
-  showResults(edd, ega){
+
+  showResults(edd, ega) {
     // Show the spinner 
     this.showLoader();
 
     // Output the edd and ega in their respective <span>
-    document.getElementById('edd').innerHTML = `${edd}`;
-    document.getElementById('ega').innerHTML = `${ega}`;
+    document.getElementById('edd').textContent = edd;
+    document.getElementById('ega').textContent = ega;
 
     // Increase their font sizes
     document.getElementById('edd').style.fontSize = '32px';
@@ -26,33 +26,33 @@ class UI{
     setTimeout(this.displayResult, 1000);
   }
 
-  displayResult(){
+  displayResult() {
     // Display the div containing the results
     document.getElementById('results').style.display = 'block';
+    document.querySelector('#button-area').scrollIntoView({ behavior: 'smooth'});
   }
 
-  showAlert(message, color){
-    //Method for showing alerts containing message and having a color of color passed
+  showAlert(message, color) {
     const cardTitle = document.querySelector('.card-title');
     const alert = document.createElement('div');
 
     //Dynamically used the color passed to display a type of bootstrap alert
     alert.className = `alert alert-${color} w-50 mx-auto`;
-    // Creates a text node for the message passed
+
     alert.appendChild(document.createTextNode(message));
-    console.log(alert); 
+
     this.card.insertBefore(alert, cardTitle);
     // Clear alert after 3s
     setTimeout(this.clearAlert, 3000);
 
   }
 
-  clearAlert(){
+  clearAlert() {
     // Remove alert
     document.querySelector('.alert').remove();
   }
 
-  showLoader(){
+  showLoader() {
     // Display the spinner, called above
     const loader = document.querySelector('.spinner-border');
     loader.style.display = 'inline-block';
@@ -60,8 +60,10 @@ class UI{
     setTimeout(this.clearLoader, 1000);
   }
 
-  clearLoader(){
+  clearLoader() {
     // Hide the spinner
     document.querySelector('.spinner-border').style.display = 'none';
   }
 }
+
+export default UI;
