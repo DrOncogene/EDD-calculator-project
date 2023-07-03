@@ -1,5 +1,5 @@
-import UI from "./js/UI.js";
-import Cyesis from "./js/cyesis.js";
+import UI from "./UI.js";
+import Cyesis from "./cyesis.js";
 
 // Instantiate a UI object
 const ui = new UI();

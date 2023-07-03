@@ -1,0 +1,40 @@
+{
+  "background_color": "#17a2b8",
+  "description": "A web app that calculates the EDD and EGA of a pregnancy from the LMP.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Gestational Age Calculator",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "EGA Calculator",
+  "start_url": "/",
+  "theme_color": "#0069d9",
+  "categories": [
+    "medical"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "type": "image/png",
+      "sizes": "929x353"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Home",
+      "url": "/",
+      "description": "Go home"
+    }
+  ],
+  "lang": "en",
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "browser",
+    "window-controls-overlay"
+  ],
+  "edge_side_panel": {
+    "preferred_width": 310
+  }
+}
