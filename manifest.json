@@ -55,15 +55,21 @@
       "sizes": "620x300"
     },
     {
-      "src": "img/windows11/Wide310x150Logo.scale-100.png",
-      "sizes": "310x150"
+      "src": "img/windows11/Square150x150Logo.scale-100.png",
+      "sizes": "150x150"
     }
   ],
   "shortcuts": [
     {
       "name": "Home",
       "url": "/",
-      "description": "Go home"
+      "description": "Go home",
+      "icons": [
+        {
+          "src": "img/android/android-launchericon-96-96.png",
+          "sizes": "96x96"
+        }
+      ]
     }
   ],
   "lang": "en",
