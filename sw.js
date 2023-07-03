@@ -15,8 +15,10 @@ self.addEventListener("message", (event) => {
 
 self.addEventListener('install', async (event) => {
   event.waitUntil(
-    caches.open(CACHE)
-      .then((cache) => cache.addAll(['/', offlineFallbackPage]))
+    (async () => {
+      const cache = await caches.open(CACHE);
+      await cache.addAll(['/', offlineFallbackPage]);
+    })()
   );
 });
 

@@ -1,5 +1,5 @@
 {
-  "background_color": "#17a2b8",
+  "background_color": "#333333",
   "description": "A web app that calculates the EDD and EGA of a pregnancy from the LMP.",
   "dir": "ltr",
   "display": "standalone",
