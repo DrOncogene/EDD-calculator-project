@@ -15,9 +15,48 @@
   "screenshots": [],
   "icons": [
     {
-      "src": "img/logo.png",
-      "type": "image/png",
-      "sizes": "929x353"
+      "src": "img/android/android-launchericon-144-144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "img/android/android-launchericon-96-96.png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "img/android/android-launchericon-48-48.png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/ios/50.png",
+      "sizes": "50x50"
+    },
+    {
+      "src": "img/ios/60.png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "img/ios/100.png",
+      "sizes": "100x100"
+    },
+    {
+      "src": "img/ios/120.png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "img/ios/144.png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "img/windows11/LargeTile.scale-200.png",
+      "sizes": "620x620"
+    },
+    {
+      "src": "img/windows11/SplashScreen.scale-100.png",
+      "sizes": "620x300"
+    },
+    {
+      "src": "img/windows11/Wide310x150Logo.scale-100.png",
+      "sizes": "310x150"
     }
   ],
   "shortcuts": [
