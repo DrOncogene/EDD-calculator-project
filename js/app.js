@@ -1,4 +1,4 @@
-import UI from "./UI.js";
+import UI from "./ui.js";
 import Cyesis from "./cyesis.js";
 
 // Instantiate a UI object
