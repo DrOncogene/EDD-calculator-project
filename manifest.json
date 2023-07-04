@@ -4,15 +4,15 @@
   "dir": "ltr",
   "display": "standalone",
   "name": "Gestational Age Calculator",
-  "orientation": "any",
+  "orientation": "portrait",
   "scope": "/",
   "short_name": "EGA Calculator",
   "start_url": "/",
+  "id": "/gac",
   "theme_color": "#0069d9",
   "categories": [
     "medical"
   ],
-  "screenshots": [],
   "icons": [
     {
       "src": "img/icons/48.png",
@@ -20,7 +20,8 @@
     },
     {
       "src": "img/icons/96.png",
-      "sizes": "96x96"
+      "sizes": "96x96",
+      "purpose": "any"
     },
     {
       "src": "img/icons/100.png",
