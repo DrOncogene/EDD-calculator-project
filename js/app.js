@@ -59,7 +59,3 @@ function placeholder(today) {
 
   return `${todayYear}-${todayMonth}-${todayDate}`
 }
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('../sw.js');
-}
