@@ -6,14 +6,14 @@ const CACHE = "ega-calculator-cache";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
 const offlineFallbackPage = "/offline.html";
-const CACHED_FILES = [
+const filesToCache = [
   "/",
   "/index.html",
   "/js/app.js",
   "/js/ui.js",
   "/js/cyesis.js",
-  "/css/styles.css",
-  "/img/logo.ng",
+  "/css/style.css",
+  "/img/logo.png",
   "/img/icons/48.png",
   "/img/icons/96.png",
   "/img/icons/120.png",
@@ -34,7 +34,8 @@ self.addEventListener('install', async (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE);
-      await cache.addAll(CACHED_FILES);
+      console.log('[ServiceWorker] Pre-caching offline page');
+      await cache.addAll(filesToCache);
     })()
   );
 });
