@@ -8,7 +8,6 @@ const CACHE = "ega-calculator-cache";
 const offlineFallbackPage = "/offline.html";
 const filesToCache = [
   "/",
-  "/index.html",
   "/js/app.js",
   "/js/ui.js",
   "/js/cyesis.js",
