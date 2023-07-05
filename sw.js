@@ -1,30 +1,28 @@
-// This is the "Offline page" service worker
+// This is the 'Offline page' service worker
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "ega-calculator-cache";
-
-// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "/offline.html";
+const CACHE = 'ega-calculator-cache-v1';
+const offlineFallbackPage = '/offline.html';
 const filesToCache = [
-  "/",
-  "/js/app.js",
-  "/js/ui.js",
-  "/js/cyesis.js",
-  "/css/style.css",
-  "/img/logo.png",
-  "/img/icons/48.png",
-  "/img/icons/96.png",
-  "/img/icons/120.png",
-  "/img/icons/144.png",
-  "/img/icons/150.png",
-  "/img/icons/256.png",
-  "/img/icons/512.png",
+  '/',
+  '/js/app.js',
+  '/js/ui.js',
+  '/js/cyesis.js',
+  '/css/style.css',
+  '/img/logo.png',
+  '/img/icons/48.png',
+  '/img/icons/96.png',
+  '/img/icons/120.png',
+  '/img/icons/144.png',
+  '/img/icons/150.png',
+  '/img/icons/256.png',
+  '/img/icons/512.png',
   offlineFallbackPage
 ];
 
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
@@ -44,23 +42,28 @@ if (workbox.navigationPreload.isSupported()) {
 }
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        const preloadResp = await event.preloadResponse;
+  event.respondWith((async () => {
+    try {
+      const preloadResp = await event.preloadResponse;
 
-        if (preloadResp) {
-          return preloadResp;
-        }
-
-        const networkResp = await fetch(event.request);
-        return networkResp;
-      } catch (error) {
-        console.log('[Service Worker] Fetch failed; returning offline page instead.', error);
-        const cache = await caches.open(CACHE);
-        const cachedResp = await cache.match(offlineFallbackPage);
-        return cachedResp;
+      if (preloadResp) {
+        return preloadResp;
       }
-    })());
-  }
+
+      const networkResp = await fetch(event.request);
+      return networkResp;
+    } catch (error) {
+      console.log('[Service Worker] Fetch failed; using offline content.');
+      const cache = await caches.open(CACHE);
+
+      let cachedResp;
+      if (event.request.url === self.location.origin + '/') {
+        cachedResp = await cache.match(offlineFallbackPage);
+      } else {
+        cachedResp = await cache.match(event.request.url);
+      }
+
+      return cachedResp;
+    }
+  })());
 });
